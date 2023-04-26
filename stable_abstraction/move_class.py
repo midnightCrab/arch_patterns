@@ -36,9 +36,13 @@ class Move:
     def __init__(self, m: IMovable):        
         self.m = m
 
-    def Execute(self):
+    def execute(self):
         new_position = self.m.getPosition() +  self.m.getVelocity()
         self.m.setPosition(new_position)
+
+    def undo(self):
+        old_position = self.m.getPosition() - self.m.getVelocity()
+        self.m.setPosition(old_position)
 
 
 
