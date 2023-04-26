@@ -7,7 +7,7 @@ def test_one():
     position = Vector(12, 5)
     velocity = Vector(-7, 3)
     my_obj = MovableObject(position, velocity) 
-    Move(my_obj).Execute()
+    Move(my_obj).execute()
     assert my_obj.position.x == 5
     assert my_obj.position.y == 8
 
@@ -25,7 +25,7 @@ def test_broken_getPosition():
     velocity = Vector(-7, 3)
     with pytest.raises(TypeError):
         obj = BrokenObject(position, velocity)
-        Move(obj).Execute()
+        Move(obj).execute()
 
 
 def test_broken_getVelocity():    
@@ -33,7 +33,7 @@ def test_broken_getVelocity():
     velocity = Vector(-7, 3)
     with pytest.raises(TypeError):
         obj = BrokenObject(position, velocity)
-        Move(obj).Execute()
+        Move(obj).execute()
 
 
 def test_broken_setPosition():    
@@ -41,4 +41,4 @@ def test_broken_setPosition():
     velocity = Vector(-7, 3)
     with pytest.raises(TypeError):
         obj = BrokenObject(position, velocity)
-        Move(obj).Execute()
+        Move(obj).execute()
